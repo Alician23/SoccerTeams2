@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TeamSelector</string>
+    <string name="team_s_name">Team\'s name</string>
+    <string name="team_s_name_2">Team\'s name</string>
+    <string name="select_here_button">Select Random Team</string>
+    <string name="result_shown_here">Result shown here</string>
+    <string name="background_text">TeamSelector</string>
+    <string name="team_1">Team 1</string>
+    <string name="team_2">Team 2</string>
+    <string name="search_team_2">Search team 2</string>
+    <string name="search_team_1">Search team 1</string>
+    <string name="read_display_text">Reading for %1$s</string>
+    <string name="no_text_error_message">Reading for error %1$s</string>
+    <string name="show_result_message">Showing result information %1$s</string>
+</resources>
