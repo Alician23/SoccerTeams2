@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TeamSelector</string>
+    <string name="app_name">Who Goes First</string>
     <string name="team_s_name">Team\'s name</string>
     <string name="team_s_name_2">Team\'s name</string>
     <string name="select_here_button">Select Random Team</string>

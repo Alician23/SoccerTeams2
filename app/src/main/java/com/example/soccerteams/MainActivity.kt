@@ -14,42 +14,45 @@ class MainActivity : AppCompatActivity() {
     private lateinit var selectRandomButton: Button
     private lateinit var teamName1: EditText
     private lateinit var teamName2: EditText
-    private lateinit var showTeam: TextView
+    private lateinit var showPickTeamLabel: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Variables use to store id
+        //Assign variables with id
         selectRandomButton = findViewById(R.id.select_button)
         teamName1 = findViewById(R.id.search_team_1)
         teamName2 = findViewById(R.id.search_team_2)
-        showTeam = findViewById(R.id.show_result_text)
+        showPickTeamLabel = findViewById(R.id.show_result_text)
 
         teamName1.doAfterTextChanged {
             val text = teamName1.text
             if (text.isNotBlank()) { // Checking for empty text
-                showTeam.text = getString(R.string.read_display_text, text) // Get text from EditText and display on show result
+                selectRandomButton.text = getString(R.string.read_display_text, text) // Get text from EditText and display on show result
             } else {
-                showTeam.text = getString(R.string.read_display_text, "...")
+                selectRandomButton.text = getString(R.string.read_display_text, "...")
             }
         }
         teamName2.doAfterTextChanged {
             val text = teamName2.text
             if (text.isNotBlank()) {
-                showTeam.text = getString(R.string.read_display_text, text)
+             selectRandomButton.text = getString(R.string.read_display_text, text)
             } else {
-                showTeam.text = getString(R.string.read_display_text,  "...")
+                selectRandomButton.text = getString(R.string.read_display_text,  "...")
             }
         }
-        // Button displays pop up message for empty space
+        // Button displays pop up message for empty space or strings
        selectRandomButton.setOnClickListener {
-           val text = teamName1.text
-           if (text.isBlank()) {
-               Toast.makeText( this, getString(R.string.no_text_error_message), Toast.LENGTH_LONG).show()
+            val team1 = teamName1.text
+            val team2 = teamName2.text
+            if (team1.isBlank() || team2.isBlank()) { // checking team 1 and team 2 for blank space or empty string
+               Toast.makeText( this, " Enter team 1 and team 2 names", Toast.LENGTH_LONG).show() // Pop up toast message text
            }else {
-               Toast.makeText( this, getString(R.string.show_result_message, text), Toast.LENGTH_SHORT).show()
+               val groups = listOf(team1, team2) // List of both teams
+               val option = groups.random() // Random function determines which team is selected and stores in variable option
+               showPickTeamLabel.text = option // displays text message
            }
 
 
