@@ -8,16 +8,16 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/search_team_1"
+        android:id="@+id/edFirstTeam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:ems="10"
-        android:hint="@string/search_team_1"
+        android:hint="@string/first_team"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="@string/team_s_name"
-        app:layout_constraintBottom_toTopOf="@+id/search_team_2"
+        android:text="@string/first_team_name"
+        app:layout_constraintBottom_toTopOf="@+id/edSecondTeam"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,23 +26,23 @@
         app:layout_constraintVertical_chainStyle="packed" />
 
     <EditText
-        android:id="@+id/search_team_2"
+        android:id="@+id/edSecondTeam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:ems="10"
-        android:hint="@string/search_team_2"
+        android:hint="Second team"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="@string/team_s_name_2"
+        android:text="@string/second_team_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_team_1" />
+        app:layout_constraintTop_toBottomOf="@+id/edFirstTeam" />
 
     <Button
-        android:id="@+id/select_button"
+        android:id="@+id/btn_Select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/teal_200"
@@ -52,11 +52,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_team_2"
+        app:layout_constraintTop_toBottomOf="@+id/edSecondTeam"
         app:layout_constraintVertical_bias="0.164" />
 
     <TextView
-        android:id="@+id/show_result_text"
+        android:id="@+id/tvResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/result_shown_here"
@@ -69,7 +69,7 @@
         app:layout_constraintVertical_bias="0.751" />
 
     <TextView
-        android:id="@+id/text_team_2"
+        android:id="@+id/tvTeam2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/team_2"
@@ -81,6 +81,7 @@
         app:layout_constraintVertical_bias="0.275" />
 
     <TextView
+        android:id="@+id/tvTeam1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/team_1"

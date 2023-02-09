@@ -1,8 +1,8 @@
 package com.example.soccerteams
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -11,40 +11,41 @@ import androidx.core.widget.doAfterTextChanged
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var selectRandomButton: Button
+    private lateinit var selectButton: Button
     private lateinit var teamName1: EditText
     private lateinit var teamName2: EditText
     private lateinit var showPickTeamLabel: TextView
 
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         //Assign variables with id
-        selectRandomButton = findViewById(R.id.select_button)
-        teamName1 = findViewById(R.id.search_team_1)
-        teamName2 = findViewById(R.id.search_team_2)
-        showPickTeamLabel = findViewById(R.id.show_result_text)
+        selectButton = findViewById(R.id.select_button)
+        teamName1 = findViewById(R.id.edFirstTeam)
+        teamName2 = findViewById(R.id.edSecondTeam)
+        showPickTeamLabel = findViewById(R.id.tvResult)
 
         teamName1.doAfterTextChanged {
             val text = teamName1.text
             if (text.isNotBlank()) { // Checking for empty text
-                selectRandomButton.text = getString(R.string.read_display_text, text) // Get text from EditText and display on show result
+                selectButton.text = getString(R.string.read_display_text, text) // Get text from EditText and display on show result
             } else {
-                selectRandomButton.text = getString(R.string.read_display_text, "...")
+                selectButton.text = getString(R.string.read_display_text, "...")
             }
         }
         teamName2.doAfterTextChanged {
             val text = teamName2.text
             if (text.isNotBlank()) {
-             selectRandomButton.text = getString(R.string.read_display_text, text)
+             selectButton.text = getString(R.string.read_display_text, text)
             } else {
-                selectRandomButton.text = getString(R.string.read_display_text,  "...")
+                selectButton.text = getString(R.string.read_display_text,  "...")
             }
         }
         // Button displays pop up message for empty space or strings
-       selectRandomButton.setOnClickListener {
+       selectButton.setOnClickListener {
             val team1 = teamName1.text
             val team2 = teamName2.text
             if (team1.isBlank() || team2.isBlank()) { // checking team 1 and team 2 for blank space or empty string
