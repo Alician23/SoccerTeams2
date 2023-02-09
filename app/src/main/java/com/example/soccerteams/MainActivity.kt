@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //Assign variables with id
-        selectButton = findViewById(R.id.select_button)
+        selectButton = findViewById(R.id.btn_Select)
         teamName1 = findViewById(R.id.edFirstTeam)
         teamName2 = findViewById(R.id.edSecondTeam)
         showPickTeamLabel = findViewById(R.id.tvResult)
