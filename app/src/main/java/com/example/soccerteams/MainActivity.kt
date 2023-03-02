@@ -30,12 +30,9 @@ class MainActivity : AppCompatActivity() {
 
         teamName1.doAfterTextChanged {
             val text = teamName1.text
-            //if (text.isNotBlank()) { // Checking for empty text
-            //}
         }
         teamName2.doAfterTextChanged {
             val text = teamName2.text
-           // if (text.isNotBlank()) {
         }
         // Button displays pop up message for empty space or strings
        selectButton.setOnClickListener {
@@ -48,8 +45,6 @@ class MainActivity : AppCompatActivity() {
                val option = groups.random() // Random function determines which team is selected and stores in variable option
                showPickTeamLabel.text = option // displays text message
            }
-
-
        }
 
     }
