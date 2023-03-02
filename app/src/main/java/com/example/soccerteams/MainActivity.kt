@@ -30,19 +30,12 @@ class MainActivity : AppCompatActivity() {
 
         teamName1.doAfterTextChanged {
             val text = teamName1.text
-            if (text.isNotBlank()) { // Checking for empty text
-                selectButton.text = getString(R.string.read_display_text, text) // Get text from EditText and display on show result
-            } else {
-                selectButton.text = getString(R.string.read_display_text, "...")
-            }
+            //if (text.isNotBlank()) { // Checking for empty text
+            //}
         }
         teamName2.doAfterTextChanged {
             val text = teamName2.text
-            if (text.isNotBlank()) {
-             selectButton.text = getString(R.string.read_display_text, text)
-            } else {
-                selectButton.text = getString(R.string.read_display_text,  "...")
-            }
+           // if (text.isNotBlank()) {
         }
         // Button displays pop up message for empty space or strings
        selectButton.setOnClickListener {
